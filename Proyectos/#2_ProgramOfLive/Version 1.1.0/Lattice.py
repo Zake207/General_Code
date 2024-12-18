@@ -98,6 +98,9 @@ class Lattice:
             lattice += "\n"
         return lattice
     
+    def GetSize(self) -> tuple:
+        return (self.__rows, self.__columns)
+    
     def SwitchState(self, x, y):
         if self.__lattice[x][y].GetState() == "-":
             self.__lattice[x][y].SetState("x")
