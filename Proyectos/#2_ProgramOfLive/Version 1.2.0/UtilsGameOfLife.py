@@ -20,12 +20,9 @@ def ConfigureFrames() -> None:
     initial_frame.place(relwidth = 1, relheight = 1)
     config_frame.place(relwidth = 1, relheight = 1)
     help_frame.place(relwidth = 1, relheight = 1)
-
-def ChangeFrame(frame) -> None:
-    frame.tkraise()
     
 def Help() -> None:
-    ChangeFrame(help_frame)
+    Utils.ChangeFrame(help_frame)
     button_help_return.pack()
     button_help_return.place(relx=0.02, rely=0.02, anchor='nw')
     instructions_of_the_game_label.pack()
@@ -34,7 +31,7 @@ def Help() -> None:
     title_instructions_of_the_game_label.place(relx=0.5, rely=0.1, anchor='center')
 
 def ReturnToMainMenu() -> None:
-    ChangeFrame(Utils.main_frame)
+    Utils.ChangeFrame(Utils.main_frame)
     button_help_return.pack_forget()
     instructions_of_the_game_label.pack_forget()
     title_instructions_of_the_game_label.pack_forget()
@@ -87,7 +84,7 @@ def AutoPlay() -> None:
     while AutoPlayFlag:
         NextGen()
         Utils.root.update()
-        Utils.root.after(500)
+        Utils.root.after(100)
 
     
 
@@ -102,7 +99,7 @@ button_clear_lattice = tkinter.Button(initial_frame, text = "Clear", fg = "orang
 button_menu = tkinter.Button(initial_frame, text = "Back To Menu", fg = "blue", bg = "lightgrey", command = ReturnToMainMenu)
 button_help = tkinter.Button(initial_frame, text = "Help", fg = "red", bg = "lightgrey", command = Help)
 button_next_gen = tkinter.Button(initial_frame, text = "Next Gen", fg = "green", bg = "lightgrey", width = 7, command = NextGen)
-button_help_return = tkinter.Button(help_frame, text = "Return", fg = "red", bg = "lightgrey", width = 7, command = lambda: ChangeFrame(initial_frame))
+button_help_return = tkinter.Button(help_frame, text = "Return", fg = "red", bg = "lightgrey", width = 7, command = lambda: Utils.ChangeFrame(initial_frame))
 button_auto_play = tkinter.Button(initial_frame, text = "Auto Play", fg = "green", bg = "lightgrey", width = 7,command = AutoPlay)
 
 ###                                                         /// CLASSES ///

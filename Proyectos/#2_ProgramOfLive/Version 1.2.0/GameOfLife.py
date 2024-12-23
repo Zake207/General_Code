@@ -3,8 +3,9 @@ import UtilsAlgorithmHub as Utils
     #                                               /// Main Window Configuration ///
 def GameOfLife() :
     Utils.root.title("Game of Life")
+    Utils.root.geometry("800x600")
     UtilsGameOfLife.ConfigureFrames()
-    UtilsGameOfLife.ChangeFrame(UtilsGameOfLife.initial_frame)
+    Utils.ChangeFrame(UtilsGameOfLife.initial_frame)
     UtilsGameOfLife.ButtonCreator(UtilsGameOfLife.initial_frame, UtilsGameOfLife.button_list)
     UtilsGameOfLife.ClearLattice()
 

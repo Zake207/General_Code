@@ -1,19 +1,23 @@
 import tkinter as tk
 
-def resize(event):
-    new_width = event.width
-    new_height = event.height
-    # Ajustar fuente en función del tamaño de la ventana
-    font_size = int(min(new_width, new_height) * 0.02)  # Escalar fuente proporcionalmente
-    button.config(font=("Arial", font_size))
+def procesar_entrada():
+    entrada = entry.get()  # Obtener el texto del Entry
+    try:
+        lista_numeros = [int(num) for num in entrada.split()]  # Convertir a lista de enteros
+        print("Lista de enteros:", lista_numeros)
+    except ValueError:
+        print("Por favor, introduce solo números separados por espacios.")
 
+# Configuración de la ventana de Tkinter
 root = tk.Tk()
-root.geometry("800x600")
+root.title("Entrada a lista de enteros")
 
-button = tk.Button(root, text="Botón adaptable")
-button.pack(expand=True, fill="both")
+# Entry para la entrada del usuario
+entry = tk.Entry(root, width=30)
+entry.pack(pady=10)
 
-# Vincular la función al redimensionamiento de la ventana
-root.bind("<Configure>", resize)
+# Botón para procesar la entrada
+boton = tk.Button(root, text="Procesar", command=procesar_entrada)
+boton.pack(pady=10)
 
 root.mainloop()
