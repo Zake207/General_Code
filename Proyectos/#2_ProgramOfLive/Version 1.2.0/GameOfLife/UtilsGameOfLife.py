@@ -1,12 +1,12 @@
-import Lattice
+import GameOfLife.Lattice as Lattice
 import tkinter
 import tkinter.messagebox
-import UtilsAlgorithmHub as Utils
+import MainProgram.UtilsAlgorithmHub as Utils
 
 ###                                                         /// GLOBAL VARIABLES ///
 gen_number = 0
 main_lattice = Lattice.Lattice(20, 20)
-instructions_of_the_game = open("GameOfLifeInstructions.txt").read()
+instructions_of_the_game = open("./GameOfLife/GameOfLifeInstructions.txt").read()
 button_list = list()
 AutoPlayFlag = False
         

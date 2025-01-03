@@ -1,6 +1,6 @@
-import UtilsAlgorithmHub as Utils
-import GameOfLife
-import Sorting
+import MainProgram.UtilsAlgorithmHub as Utils
+import GameOfLife.GameOfLife as GameOfLife
+import Sorting.Sorting as Sorting
 
 
 def main():
