@@ -12,6 +12,7 @@
 using namespace std;
 
 int main(int argc, char* argv[]) {
+    srand (time(NULL)); // Inicialización de la semilla para la generación de números aleatorios
     if (argc != 4) {
         if (argc == 2 && string(argv[1]) == "--help") {
             cout << "Uso: ./main <archivo de entrada> <archivo de salida> <modo>" << endl;
@@ -24,6 +25,7 @@ int main(int argc, char* argv[]) {
         cerr << "/// Error: el numero de argumentos es incorrecto, use la opcion --help para mas informacion" << endl;
         return 1;
     }
+    
     string file = argv[1];
     string output = argv[2];
     string mode = argv[3];

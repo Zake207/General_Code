@@ -12,7 +12,6 @@
     void Grafo::RecorridoAmplitud(std::ofstream &output_file) {
         srand (time(NULL)); // Inicialización de la semilla para la generación de números aleatorios
         // Petición de los nodos de inicio y fin
-    
         int pos_ini{0};
         int pos_fin{0};
         cout << "Ingrese el nodo de inicio: ";
@@ -90,37 +89,50 @@
                 }
                 // Escojo al siguiente nodo a visitar de manera aleatoria entre los nodos pendientes
                 // Elijo entre el que tiene menor coste o el que tiene mayor coste de manera aleatoria
-                    int min_cost = 0;
+                    int min_cost = 999999;
                     int max_cost = 0;
-                    for (auto& nodo : nodos_pendientes) {
-                        for (auto& parent : nodo.getParents()) {
-                            if (parent.second < min_cost) {
-                                min_cost = parent.second;
+                    for (auto& node : nodos_pendientes) {
+                        if (node.getParents().size() > 0) {
+                            int cost = 0;
+                            for (auto& parent : node.getParents()) {
+                                cost += parent.second;
                             }
-                            if (parent.second > max_cost) {
-                                max_cost = parent.second;
+                            if (cost < min_cost) {
+                                min_cost = cost;
                             }
-                        }
-                    }
-                    int random = rand() % 2;
-                    if (random == 0) {
-                        for (auto& nodo : nodos_pendientes) {
-                            for (auto& parent : nodo.getParents()) {
-                                if (parent.second == min_cost) {
-                                    nodo_actual = nodo;
-                                }
+                            if (cost > max_cost) {
+                                max_cost = cost;
                             }
                         }
                     }
-                    else {
-                        for (auto& nodo : nodos_pendientes) {
-                            for (auto& parent : nodo.getParents()) {
-                                if (parent.second == max_cost) {
-                                    nodo_actual = nodo;
-                                }
+                    vector<int> nodos_min_cost;
+                    vector<int> nodos_max_cost;
+                    for (auto& node : nodos_pendientes) {
+                        if (node.getParents().size() > 0) {
+                            int cost = 0;
+                            for (auto& parent : node.getParents()) {
+                                cost += parent.second;
+                            }
+                            if (cost == min_cost) {
+                                nodos_min_cost.push_back(node.getId());
+                            }
+                            if (cost == max_cost) {
+                                nodos_max_cost.push_back(node.getId());
                             }
                         }
                     }
+                    int next_node = 0;
+                    if (rand() % 2 == 0) {
+                        next_node = nodos_min_cost[rand() % nodos_min_cost.size()];
+                    } else {
+                        next_node = nodos_max_cost[rand() % nodos_max_cost.size()];
+                    }
+                    for (auto& node : nodos_pendientes) {
+                        if (node.getId() == next_node) {
+                            nodo_actual = node;
+                        }
+                    }
+                    
                 output_file << "\tNodos generados: ";
                 for (int i = 0; i < nodos_generados.size(); ++i) {
                     output_file << nodos_generados[i] << " ";

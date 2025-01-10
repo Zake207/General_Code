@@ -5,6 +5,7 @@
 #include <queue>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 
 #include "../lib/Nodo.h"
 #include "../lib/Grafo.h"
@@ -12,6 +13,7 @@
 using namespace std;
 
 int main(int argc, char* argv[]) {
+    srand(time(NULL));
     if (argc != 4) {
         if (argc == 2 && string(argv[1]) == "--help") {
             cout << "Uso: ./main <archivo de entrada> <archivo de salida> <modo>" << endl;

@@ -1,0 +1,5 @@
+Numero de nodos: 15
+Numero de aristas: 19
+Nodo de inicio: 1000
+Nodo de fin: -923
+//////////////////////////////////////////////

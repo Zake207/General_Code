@@ -1,0 +1,54 @@
+Numero de nodos: 15
+Numero de aristas: 20
+Nodo de inicio: 5
+Nodo de fin: 13
+//////////////////////////////////////////////
+Iteracion: 1
+	Nodo: 5
+	Nodos generados: 3 4 7 9 10 
+	Nodos visitados: 5 
+Iteracion: 2
+	Nodo: 3
+	Nodos generados: 3 4 7 9 10 1 2 11 
+	Nodos visitados: 5 3 
+Iteracion: 3
+	Nodo: 4
+	Nodos generados: 3 4 7 9 10 1 2 11 11 12 13 
+	Nodos visitados: 5 3 4 
+Iteracion: 4
+	Nodo: 7
+	Nodos generados: 3 4 7 9 10 1 2 11 11 12 13 8 13 14 
+	Nodos visitados: 5 3 4 7 
+Iteracion: 5
+	Nodo: 9
+	Nodos generados: 3 4 7 9 10 1 2 11 11 12 13 8 13 14 10 
+	Nodos visitados: 5 3 4 7 9 
+Iteracion: 6
+	Nodo: 10
+	Nodos generados: 3 4 7 9 10 1 2 11 11 12 13 8 13 14 10 2 9 
+	Nodos visitados: 5 3 4 7 9 10 
+Iteracion: 7
+	Nodo: 1
+	Nodos generados: 3 4 7 9 10 1 2 11 11 12 13 8 13 14 10 2 9 0 2 
+	Nodos visitados: 5 3 4 7 9 10 1 
+Iteracion: 8
+	Nodo: 2
+	Nodos generados: 3 4 7 9 10 1 2 11 11 12 13 8 13 14 10 2 9 0 2 0 1 10 
+	Nodos visitados: 5 3 4 7 9 10 1 2 
+Iteracion: 9
+	Nodo: 11
+	Nodos generados: 3 4 7 9 10 1 2 11 11 12 13 8 13 14 10 2 9 0 2 0 1 10 4 
+	Nodos visitados: 5 3 4 7 9 10 1 2 11 
+Iteracion: 10
+	Nodo: 11
+	Nodos generados: 3 4 7 9 10 1 2 11 11 12 13 8 13 14 10 2 9 0 2 0 1 10 4 3 
+	Nodos visitados: 5 3 4 7 9 10 1 2 11 11 
+Iteracion: 11
+	Nodo: 12
+	Nodos generados: 3 4 7 9 10 1 2 11 11 12 13 8 13 14 10 2 9 0 2 0 1 10 4 3 
+	Nodos visitados: 5 3 4 7 9 10 1 2 11 11 12 
+Iteracion: 12
+	Nodo: 13
+//////////////////////////////////////////////
+Ruta encontrada: 5 4 13
+Coste: 14

@@ -8,6 +8,7 @@
             cout << node << endl;
         }
     }
+    
     // Recorrido en amplitud (BFS)
     void Grafo::RecorridoAmplitud(std::ofstream &output_file) {
         // Petición de los nodos de inicio y fin
@@ -17,6 +18,11 @@
         cin >> pos_ini;
         cout << "Ingrese el nodo de fin: ";
         cin >> pos_fin;
+        // Compruebo que los nodos de inicio y fin sean válidos
+        if (pos_ini < 0 || pos_ini >= node_list_.size() || pos_fin < 0 || pos_fin >= node_list_.size()) {
+            cout << "/// ERROR: Los nodos ingresados no son válidos" << endl;
+            return;
+        }
         output_file << "Nodo de inicio: " << pos_ini << endl;
         output_file << "Nodo de fin: " << pos_fin << endl;
         output_file << "//////////////////////////////////////////////" << endl;
@@ -61,15 +67,19 @@
             }
             // Si no es el nodo final, se extraen los hijos del nodo actual teniendo en cuenta los padres del nodo actual
             else {
+                // Inserta los hijos del nodo actual en la cola
                 for (auto& child : nodo_actual.getChildren()) {
                     int childId = child.first;
                     double cost = child.second;
                     Nodo childNode = node_list_[childId];
+                    // Inserta los padres del nodo actual en el nodo hijo
                     for (auto& parent : nodo_actual.getParents()) {
                         childNode.InsertParent(parent.first, parent.second);
                     }
+                    // Inserta el nodo actual como padre del nodo hijo
                     childNode.InsertParent(nodo_actual.getId(), cost);
                     bool insertar = true;
+                    // Comprueba si el nodo hijo ya tiene al nodo hijo como predecesor
                     for (auto& parent : childNode.getParents()) {
                         if (parent.first == childId) {
                             insertar = false;
@@ -80,6 +90,12 @@
                         nodos_generados.push_back(childId);
                     }
                 }
+                // SI DESEO ELEGIR EL SIGUIENTE NODO DE MANERA ALEATORIA USAR ESTE BLOQUE DE CÓDIGO
+                // RECORDAR QUE HAY QUE CAMBIAR LA ESTRUCUTRA DE DATOS DE COLA A VECTOR
+                // ADEMÁS DE ELIMINAR LA PARTE QUE ELIGE AL SIGUIENTE NODO AL INICIO DEL BUCLE PARA USAR ESTE BLOQUE
+                // ================================================================================
+
+                // ================================================================================ 
                 output_file << "\tNodos generados: ";
                 for (int i = 0; i < nodos_generados.size(); ++i) {
                     output_file << nodos_generados[i] << " ";
@@ -93,6 +109,7 @@
             }
         }
     }
+    
     // Recorrido en profundidad (DFS)
     void Grafo::RecorridoProfundidad(std::ofstream &output_file) {
         // Petición de los nodos de inicio y fin
@@ -102,6 +119,11 @@
         cin >> pos_ini;
         cout << "Ingrese el nodo de fin: ";
         cin >> pos_fin;
+        // Compruebo que los nodos de inicio y fin sean válidos
+        if (pos_ini < 0 || pos_ini >= node_list_.size() || pos_fin < 0 || pos_fin >= node_list_.size()) {
+            cout << "/// ERROR: Los nodos ingresados no son válidos" << endl;
+            return;
+        }
         output_file << "Nodo de inicio: " << pos_ini << endl;
         output_file << "Nodo de fin: " << pos_fin << endl;
         output_file << "//////////////////////////////////////////////" << endl;
@@ -111,12 +133,11 @@
         nodo_actual.InsertParent(-1, 0);
         pila_nodos.push(nodo_actual);
         // Variables de control
-        bool encontrado = false;
         int iteraciones = 1;
         vector<int> nodos_generados{};
         vector<int> nodos_visitados{};
         // Bucle principal
-        while (!encontrado) {
+        while (true) {
             if (pila_nodos.empty()) {
                 output_file << "No se ha encontrado una ruta entre los nodos " << pos_ini << " y " << pos_fin << endl;
                 break;
@@ -164,6 +185,12 @@
                         nodos_generados.push_back(childId);
                     }
                 }
+                // SI DESEO ELEGIR EL SIGUIENTE NODO DE MANERA ALEATORIA USAR ESTE BLOQUE DE CÓDIGO
+                // RECORDAR QUE HAY QUE CAMBIAR LA ESTRUCUTRA DE DATOS DE COLA A VECTOR
+                // ADEMÁS DE ELIMINAR LA PARTE QUE ELIGE AL SIGUIENTE NODO AL INICIO DEL BUCLE PARA USAR ESTE BLOQUE
+                // ================================================================================
+                
+                // ================================================================================ 
                 output_file << "\tNodos generados: ";
                 for (int i = 0; i < nodos_generados.size(); ++i) {
                     output_file << nodos_generados[i] << " ";
@@ -177,3 +204,4 @@
             }
         }
     }
+

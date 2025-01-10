@@ -1,0 +1,74 @@
+Numero de nodos: 20
+Numero de aristas: 25
+Nodo de inicio: 16
+Nodo de fin: 5
+//////////////////////////////////////////////
+Iteracion: 1
+	Nodo: 16
+	Nodos generados: 3 17 
+	Nodos visitados: 16 
+Iteracion: 2
+	Nodo: 3
+	Nodos generados: 3 17 1 7 17 
+	Nodos visitados: 16 3 
+Iteracion: 3
+	Nodo: 17
+	Nodos generados: 3 17 1 7 17 3 
+	Nodos visitados: 16 3 17 
+Iteracion: 4
+	Nodo: 1
+	Nodos generados: 3 17 1 7 17 3 0 2 19 
+	Nodos visitados: 16 3 17 1 
+Iteracion: 5
+	Nodo: 7
+	Nodos generados: 3 17 1 7 17 3 0 2 19 6 15 
+	Nodos visitados: 16 3 17 1 7 
+Iteracion: 6
+	Nodo: 17
+	Nodos generados: 3 17 1 7 17 3 0 2 19 6 15 
+	Nodos visitados: 16 3 17 1 7 17 
+Iteracion: 7
+	Nodo: 3
+	Nodos generados: 3 17 1 7 17 3 0 2 19 6 15 1 7 
+	Nodos visitados: 16 3 17 1 7 17 3 
+Iteracion: 8
+	Nodo: 0
+	Nodos generados: 3 17 1 7 17 3 0 2 19 6 15 1 7 4 
+	Nodos visitados: 16 3 17 1 7 17 3 0 
+Iteracion: 9
+	Nodo: 2
+	Nodos generados: 3 17 1 7 17 3 0 2 19 6 15 1 7 4 4 5 
+	Nodos visitados: 16 3 17 1 7 17 3 0 2 
+Iteracion: 10
+	Nodo: 19
+	Nodos generados: 3 17 1 7 17 3 0 2 19 6 15 1 7 4 4 5 18 
+	Nodos visitados: 16 3 17 1 7 17 3 0 2 19 
+Iteracion: 11
+	Nodo: 6
+	Nodos generados: 3 17 1 7 17 3 0 2 19 6 15 1 7 4 4 5 18 14 
+	Nodos visitados: 16 3 17 1 7 17 3 0 2 19 6 
+Iteracion: 12
+	Nodo: 15
+	Nodos generados: 3 17 1 7 17 3 0 2 19 6 15 1 7 4 4 5 18 14 14 
+	Nodos visitados: 16 3 17 1 7 17 3 0 2 19 6 15 
+Iteracion: 13
+	Nodo: 1
+	Nodos generados: 3 17 1 7 17 3 0 2 19 6 15 1 7 4 4 5 18 14 14 0 2 19 
+	Nodos visitados: 16 3 17 1 7 17 3 0 2 19 6 15 1 
+Iteracion: 14
+	Nodo: 7
+	Nodos generados: 3 17 1 7 17 3 0 2 19 6 15 1 7 4 4 5 18 14 14 0 2 19 6 15 
+	Nodos visitados: 16 3 17 1 7 17 3 0 2 19 6 15 1 7 
+Iteracion: 15
+	Nodo: 4
+	Nodos generados: 3 17 1 7 17 3 0 2 19 6 15 1 7 4 4 5 18 14 14 0 2 19 6 15 2 5 9 10 
+	Nodos visitados: 16 3 17 1 7 17 3 0 2 19 6 15 1 7 4 
+Iteracion: 16
+	Nodo: 4
+	Nodos generados: 3 17 1 7 17 3 0 2 19 6 15 1 7 4 4 5 18 14 14 0 2 19 6 15 2 5 9 10 0 5 9 10 
+	Nodos visitados: 16 3 17 1 7 17 3 0 2 19 6 15 1 7 4 4 
+Iteracion: 17
+	Nodo: 5
+//////////////////////////////////////////////
+Ruta encontrada: 16 3 1 2 5
+Coste: 29
