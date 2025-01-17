@@ -26,11 +26,11 @@
         output_file << "Nodo de inicio: " << pos_ini << endl;
         output_file << "Nodo de fin: " << pos_fin << endl;
         output_file << "//////////////////////////////////////////////" << endl;
-        queue<Nodo> cola_nodos;
+        vector<Nodo> cola_nodos;
         // Comenzamos el recorrido desde el primer nodo
         Nodo nodo_actual = node_list_[pos_ini];
         nodo_actual.InsertParent(-1, 0);
-        cola_nodos.push(nodo_actual);
+        cola_nodos.push_back(nodo_actual);
         // Variables de control
         int iteraciones = 1;
         vector<int> nodos_generados{};
@@ -43,8 +43,8 @@
             }
             // Extrae el nodo actual de la cola
             // Nodo nodo_actual = cola_nodos.front();
-            nodos_visitados.push_back(nodo_actual.getId());
-            cola_nodos.pop();
+            // nodos_visitados.push_back(nodo_actual.getId());
+            // cola_nodos.erase(cola_nodos.begin());
             // Imprime el número de iteración
             output_file << "Iteracion: " << iteraciones++ << endl;
             output_file << "\tNodo: " << nodo_actual.getId() << endl;
@@ -86,13 +86,35 @@
                         }
                     }
                     if (insertar) {
-                        cola_nodos.push(childNode);
+                        cola_nodos.push_back(childNode);
                         nodos_generados.push_back(childId);
                     }
                 }
-                
+                cout << "Check" << endl;
+                // MODIFICACIÓN
                 // ================================================================================
-
+                // ordeno la cola de nodos de menor a mayor coste
+                sort(cola_nodos.begin(), cola_nodos.end(), [](Nodo a, Nodo b) {
+                    double coste_a = 0;
+                    for (auto& parent : a.getParents()) {
+                        coste_a += parent.second;
+                    }
+                    double coste_b = 0;
+                    for (auto& parent : b.getParents()) {
+                        coste_b += parent.second;
+                    }
+                    return coste_a < coste_b;
+                });
+                cout << "Check" << endl;
+                // Selecciono una posicion aleatoria entre el 0 y la mitad de la cola
+                int pos = rand() % ((cola_nodos.size() / 2) + 1);
+                // Selecciono dicho nodo como el actual
+                nodo_actual = cola_nodos[pos];
+                // Lo elimino de la cola
+                cola_nodos.erase(cola_nodos.begin() + pos);
+                // Lo meto en visitados
+                nodos_visitados.push_back(nodo_actual.getId());
+                cout << "Checkest" << endl;
                 // ================================================================================ 
                 output_file << "\tNodos generados: ";
                 for (int i = 0; i < nodos_generados.size(); ++i) {

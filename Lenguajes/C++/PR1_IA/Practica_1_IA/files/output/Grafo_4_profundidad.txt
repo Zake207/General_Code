@@ -1,7 +1,7 @@
 Numero de nodos: 20
 Numero de aristas: 25
 Nodo de inicio: 0
-Nodo de fin: 17
+Nodo de fin: 14
 //////////////////////////////////////////////
 Iteracion: 1
 	Nodo: 0
@@ -37,26 +37,6 @@ Iteracion: 8
 	Nodos visitados: 0 1 2 4 5 8 12 13 
 Iteracion: 9
 	Nodo: 14
-	Nodos generados: 4 1 19 3 2 5 4 10 9 5 8 13 12 13 14 15 6 
-	Nodos visitados: 0 1 2 4 5 8 12 13 14 
-Iteracion: 10
-	Nodo: 6
-	Nodos generados: 4 1 19 3 2 5 4 10 9 5 8 13 12 13 14 15 6 7 
-	Nodos visitados: 0 1 2 4 5 8 12 13 14 6 
-Iteracion: 11
-	Nodo: 7
-	Nodos generados: 4 1 19 3 2 5 4 10 9 5 8 13 12 13 14 15 6 7 15 3 
-	Nodos visitados: 0 1 2 4 5 8 12 13 14 6 7 
-Iteracion: 12
-	Nodo: 3
-	Nodos generados: 4 1 19 3 2 5 4 10 9 5 8 13 12 13 14 15 6 7 15 3 17 16 
-	Nodos visitados: 0 1 2 4 5 8 12 13 14 6 7 3 
-Iteracion: 13
-	Nodo: 16
-	Nodos generados: 4 1 19 3 2 5 4 10 9 5 8 13 12 13 14 15 6 7 15 3 17 16 17 
-	Nodos visitados: 0 1 2 4 5 8 12 13 14 6 7 3 16 
-Iteracion: 14
-	Nodo: 17
 //////////////////////////////////////////////
-Ruta encontrada: 0 1 2 4 5 8 12 13 14 6 7 3 16 17
-Coste: 92
+Ruta encontrada: 0 1 2 4 5 8 12 13 14
+Coste: 52
