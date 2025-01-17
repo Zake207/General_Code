@@ -132,7 +132,7 @@
                             nodo_actual = node;
                         }
                     }
-                    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 output_file << "\tNodos generados: ";
                 for (int i = 0; i < nodos_generados.size(); ++i) {
                     output_file << nodos_generados[i] << " ";

@@ -94,6 +94,28 @@
                 // RECORDAR QUE HAY QUE CAMBIAR LA ESTRUCUTRA DE DATOS DE COLA A VECTOR
                 // ADEMÁS DE ELIMINAR LA PARTE QUE ELIGE AL SIGUIENTE NODO AL INICIO DEL BUCLE PARA USAR ESTE BLOQUE
                 // ================================================================================
+                    // Elegir el siguiente nodo de manera aleatoria entre los dos con menor coste
+                    // vector<pair<int, double>> children = nodo_actual.getChildren();
+                    // sort(children.begin(), children.end(), [](pair<int, double> a, pair<int, double> b) {
+                    //     return a.second < b.second;
+                    // }); 
+                    // int childId = children[0].first;
+                    // double cost = children[0].second;
+                    // Nodo childNode = node_list_[childId];
+                    // for (auto& parent : nodo_actual.getParents()) {
+                    //     childNode.InsertParent(parent.first, parent.second);
+                    // }
+                    // childNode.InsertParent(nodo_actual.getId(), cost);
+                    // bool insertar = true;
+                    // for (auto& parent : childNode.getParents()) {
+                    //     if (parent.first == childId) {
+                    //         insertar = false;
+                    //     }
+                    // }
+                    // if (insertar) {
+                    //     cola_nodos.push(childNode);
+                    //     nodos_generados.push_back(childId);
+                    // }
 
                 // ================================================================================ 
                 output_file << "\tNodos generados: ";
