@@ -6,49 +6,57 @@ Nodo de fin: 5
 Iteracion: 1
 	Nodo: 7
 	Nodos generados: 1 2 14 
-	Nodos visitados: 2 
+	Nodos visitados: 14 
 Iteracion: 2
-	Nodo: 2
+	Nodo: 14
 	Nodos generados: 1 2 14 
-	Nodos visitados: 2 7 
+	Nodos visitados: 14 7 
 Iteracion: 3
 	Nodo: 7
 	Nodos generados: 1 2 14 1 2 14 
-	Nodos visitados: 2 7 2 
+	Nodos visitados: 14 7 2 
 Iteracion: 4
 	Nodo: 2
 	Nodos generados: 1 2 14 1 2 14 
-	Nodos visitados: 2 7 2 14 
+	Nodos visitados: 14 7 2 2 
 Iteracion: 5
-	Nodo: 14
+	Nodo: 2
 	Nodos generados: 1 2 14 1 2 14 
-	Nodos visitados: 2 7 2 14 14 
+	Nodos visitados: 14 7 2 2 14 
 Iteracion: 6
 	Nodo: 14
 	Nodos generados: 1 2 14 1 2 14 
-	Nodos visitados: 2 7 2 14 14 1 
+	Nodos visitados: 14 7 2 2 14 1 
 Iteracion: 7
 	Nodo: 1
 	Nodos generados: 1 2 14 1 2 14 4 6 
-	Nodos visitados: 2 7 2 14 14 1 1 
+	Nodos visitados: 14 7 2 2 14 1 1 
 Iteracion: 8
 	Nodo: 1
 	Nodos generados: 1 2 14 1 2 14 4 6 4 6 
-	Nodos visitados: 2 7 2 14 14 1 1 4 
+	Nodos visitados: 14 7 2 2 14 1 1 4 
 Iteracion: 9
 	Nodo: 4
 	Nodos generados: 1 2 14 1 2 14 4 6 4 6 3 5 
-	Nodos visitados: 2 7 2 14 14 1 1 4 6 
+	Nodos visitados: 14 7 2 2 14 1 1 4 6 
 Iteracion: 10
 	Nodo: 6
 	Nodos generados: 1 2 14 1 2 14 4 6 4 6 3 5 5 8 10 13 
-	Nodos visitados: 2 7 2 14 14 1 1 4 6 4 
+	Nodos visitados: 14 7 2 2 14 1 1 4 6 13 
 Iteracion: 11
-	Nodo: 4
-	Nodos generados: 1 2 14 1 2 14 4 6 4 6 3 5 5 8 10 13 3 5 
-	Nodos visitados: 2 7 2 14 14 1 1 4 6 4 5 
+	Nodo: 13
+	Nodos generados: 1 2 14 1 2 14 4 6 4 6 3 5 5 8 10 13 9 
+	Nodos visitados: 14 7 2 2 14 1 1 4 6 13 8 
 Iteracion: 12
+	Nodo: 8
+	Nodos generados: 1 2 14 1 2 14 4 6 4 6 3 5 5 8 10 13 9 11 12 
+	Nodos visitados: 14 7 2 2 14 1 1 4 6 13 8 3 
+Iteracion: 13
+	Nodo: 3
+	Nodos generados: 1 2 14 1 2 14 4 6 4 6 3 5 5 8 10 13 9 11 12 
+	Nodos visitados: 14 7 2 2 14 1 1 4 6 13 8 3 5 
+Iteracion: 14
 	Nodo: 5
 //////////////////////////////////////////////
-Ruta encontrada: 7 1 4 5
-Coste: 15
+Ruta encontrada: 7 1 6 5
+Coste: 18
