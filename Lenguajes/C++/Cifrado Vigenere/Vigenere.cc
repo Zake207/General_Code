@@ -25,14 +25,24 @@ void DeleteSpaces(string& text, const int kSize) {
     text.erase(remove(text.begin(), text.end(), ' '), text.end());
 }
 
-void Vigenere(string& text, const string& kKey) {
+void Vigenere(string& text, const string& kKey, const bool kMode) {
     int key_index{0};
     string result{""};
-    for (int i = 0; i < text.length(); ++i) {
-        result += (char)((text[i] + kKey[key_index]) % 26 + 65);
-        ++key_index;
-        if (key_index == kKey.length()) {
-            key_index = 0;
+    if (kMode == true) {
+        for (int i = 0; i < text.length(); ++i) {
+            result += (char)((text[i] + kKey[key_index]) % 26 + 65);
+            ++key_index;
+            if (key_index == kKey.length()) {
+                key_index = 0;
+            }
+        }
+    } else {
+        for (int i = 0; i < text.length(); ++i) {
+            result += (char)((text[i] - kKey[key_index] + 26) % 26 + 65);
+            ++key_index;
+            if (key_index == kKey.length()) {
+                key_index = 0;
+            }
         }
     }
     text = result;
@@ -40,6 +50,11 @@ void Vigenere(string& text, const string& kKey) {
 
 int main() {
     srand(time(NULL));
+    bool flag_mode{true};
+    cout << "Do you want to encrypt or decrypt the message? (1 for encrypt, 0 for decrypt): ";
+    cin >> flag_mode;
+    cin.ignore();
+    cout << endl;
     cout << "/// VIGENERE ENCRYPTING ///" << endl;
     // Variables
     string key, text;
@@ -67,7 +82,7 @@ int main() {
     cout << "Key lenght : " << key.length() << endl;
 
     // Encrypt the message using the Vigenere algorithm
-    Vigenere(text, key);
+    Vigenere(text, key, flag_mode);
     cout << "Encrypted message : " << text << endl;
     return 0;
 }
