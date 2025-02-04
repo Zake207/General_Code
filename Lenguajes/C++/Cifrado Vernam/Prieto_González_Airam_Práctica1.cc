@@ -1,3 +1,10 @@
+/*
+  Airam Prieto González
+  alu0101546377@ull.edu.es
+  Implementación del cifrado de Vernam
+
+*/
+
 #include <bitset>
 #include <iostream>
 #include <random>
