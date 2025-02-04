@@ -21,7 +21,10 @@ void BinaryToString(const string& binary, string& result) {
 
 void GenerateEncryptedText(const string& bin_original_text, const int kSize, const string& key, string& encrypted_text) {
   for (int i = 0; i < kSize; i++) {
-    encrypted_text += to_string((bin_original_text[i] - '0') ^ (key[i] - '0'));
+    if (bin_original_text[i] == key[i])
+      encrypted_text += '0';
+    else
+      encrypted_text += '1';
   }
 }
 
