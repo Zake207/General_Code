@@ -5,6 +5,9 @@
 
 using namespace std;
 
+/// @brief Function that traduces a string var into a binary format var
+/// @param text the string that will be encrypted
+/// @param result the encrypted string in binary
 void StringToBinary(const string& text, string& result) {
   for (int i = 0; i < text.size(); i++) {
     bitset<8> binary(text[i]);
@@ -12,6 +15,9 @@ void StringToBinary(const string& text, string& result) {
   }
 }
 
+/// @brief Function that traduces a binary format var into a string var
+/// @param text the string that will be decrypted
+/// @param result the decrypted string in binary
 void BinaryToString(const string& binary, string& result) {
   for (int i = 0; i < binary.size(); i += 8) {
     bitset<8> ascii(binary.substr(i, 8));
@@ -19,6 +25,12 @@ void BinaryToString(const string& binary, string& result) {
   }
 }
 
+
+/// @brief Function that applies the Vernam Algorithm to the binary string using the key to encrypt/decrypt the message
+/// @param bin_original_text the message to encrypt in binary
+/// @param kSize the size of the string
+/// @param key the key in binary
+/// @param encrypted_text the result of the encrypting algorithm
 void GenerateEncryptedText(const string& bin_original_text, const int kSize, const string& key, string& encrypted_text) {
   for (int i = 0; i < kSize; i++) {
     if (bin_original_text[i] == key[i])
