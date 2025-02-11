@@ -74,7 +74,7 @@ int main() {
             key += (char)(rand() % 26 + 65);
         }
     }
-
+    CapitalizeString(key, key.length());
     // Print the input
     cout << "Text : " << text << endl;
     cout << "Text lenght : " << text.length() << endl;
@@ -83,6 +83,13 @@ int main() {
 
     // Encrypt the message using the Vigenere algorithm
     Vigenere(text, key, flag_mode);
-    cout << "Encrypted message : " << text << endl;
+    cout << "Encrypted message : ";
+    for (int i = 0; i < text.length(); ++i) {
+        if (i % key.length() == 0 && i != 0) {
+            cout << " ";
+        }
+        cout << text[i];
+    }
+    cout << endl;
     return 0;
 }

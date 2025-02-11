@@ -9,6 +9,7 @@
 #include "Utils.cc"
 
 int main(int argc, char* argv[]) {
+        // CHECK THE PARAMETERS
         int parser_return{Parser(argc, argv)};
         switch (parser_return) {
         case 0:
@@ -38,10 +39,24 @@ int main(int argc, char* argv[]) {
                 bitset<256> key(sbin_key);
                 bitset<32> counter(sbin_counter);
                 bitset<96> nonce(sbin_nonce);
-                // cout << key << endl;
-                // cout << counter << endl;
-                // cout << nonce << endl;
-
+                // STANDAR WORD CREATION
+                string sconst1, sconst2, sconst3, sconst4;
+                StringToBinary("expa", sconst1);
+                StringToBinary("nd 3", sconst2);
+                StringToBinary("2-by", sconst3);
+                StringToBinary("te k", sconst4);
+                bitset<32> const_1(sconst1);
+                bitset<32> const_2(sconst2);
+                bitset<32> const_3(sconst3);
+                bitset<32> const_4(sconst4);
+                // MATRIX CREATION
+                vector<bitset<32>> bin_array(16);
+                MatrixCreator(bin_array, const_1, const_2, const_3, const_4, key, counter, nonce);
+                cout << "\n\tOriginal Matrix\n\n"; 
+                PrintBinArray(bin_array);
+                QRMatrix(bin_array);
+                cout << "\n\tDefinitive Matrix\n\n"; 
+                PrintBinArray(bin_array);
         } else {
                 cout << "/// ERROR: no se pudo abrir el archivo de ayuda." << endl;
                 return 2;
