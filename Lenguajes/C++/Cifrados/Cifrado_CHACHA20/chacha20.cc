@@ -1,4 +1,10 @@
 /*
+        Universidad de La Laguna
+        Escuela Superior de Ingeniería y Tecnología
+        Grado en Ingeniería Informática
+        Seguridad en Sistemas Informáticos
+        Curso: 3º
+        Práctica 3 Seguridad en Sistemas de Información
         Alumno : Airam Prieto González
         Alu : alu0101546377
         Correo : alu0101546377@ull.edu.es
@@ -45,6 +51,13 @@ int main(int argc, char* argv[]) {
                 QRMatrix(bin_array);
                 cout << "\n\tDefinitive Matrix\n\n"; 
                 PrintBinArray(bin_array);
+                // Get the message to encrypt
+                string message;
+                cin.ignore();
+                cout << "Introduzca el mensaje a cifrar: ";
+                getline(cin, message);
+                // Encrypt the message
+                EncryptMessage(message, bin_array);
         } else {
                 cout << "/// ERROR: no se pudo abrir el archivo de ayuda." << endl;
                 return 2;
