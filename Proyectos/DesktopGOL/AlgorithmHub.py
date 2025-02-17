@@ -1,6 +1,5 @@
 import MainProgram.UtilsAlgorithmHub as Utils
 import GameOfLife.GameOfLife as GameOfLife
-import Sorting.Sorting as Sorting
 
 
 def main():
@@ -13,10 +12,6 @@ def main():
     Utils.button_game_of_life.config(command = GameOfLife.GameOfLife)
     Utils.button_game_of_life.pack()
     Utils.button_game_of_life.place(relx = 0.5, rely = 0.2, anchor='center')
-    # Button to open the Sorting Algorithm Hub
-    Utils.button_sorting.config(command = Sorting.Sorting)
-    Utils.button_sorting.pack()
-    Utils.button_sorting.place(relx = 0.5, rely = 0.3, anchor='center')
     
     #                                              /// Main Loop ///
     Utils.root.mainloop()

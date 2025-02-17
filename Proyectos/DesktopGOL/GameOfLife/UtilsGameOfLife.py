@@ -1,36 +1,28 @@
-import Lattice
+import GameOfLife.Lattice as Lattice
 import tkinter
 import tkinter.messagebox
+import MainProgram.UtilsAlgorithmHub as Utils
 
 ###                                                         /// GLOBAL VARIABLES ///
 gen_number = 0
 main_lattice = Lattice.Lattice(20, 20)
-instructions_of_the_game = open("instrucciones.txt").read()
+instructions_of_the_game = open("./GameOfLife/GameOfLifeInstructions.txt").read()
 button_list = list()
 AutoPlayFlag = False
         
-# /// TKINTER WINDOW
-root = tkinter.Tk()
-
 # /// TKINTER FRAMES
-initial_frame = tkinter.Frame(root, bg = "lightblue")
-config_frame = tkinter.Frame(root, bg = "lightblue")
-help_frame = tkinter.Frame(root, bg = "lightblue")
+initial_frame = tkinter.Frame(Utils.root, bg = "lightblue")
+config_frame = tkinter.Frame(Utils.root, bg = "lightblue")
+help_frame = tkinter.Frame(Utils.root, bg = "lightblue")
 
-###                                                         /// FUNCTIONS ///
+###                                                        /// FUNCTIONS ///
 def ConfigureFrames() -> None:
     initial_frame.place(relwidth = 1, relheight = 1)
     config_frame.place(relwidth = 1, relheight = 1)
     help_frame.place(relwidth = 1, relheight = 1)
-
-def ChangeFrame(frame) -> None:
-    frame.tkraise()
-
-def DisplayErrorWindow() -> None:
-    tkinter.messagebox.showerror(title = "/// ERROR", message = "This option is not implemented")
     
 def Help() -> None:
-    ChangeFrame(help_frame)
+    Utils.ChangeFrame(help_frame)
     button_help_return.pack()
     button_help_return.place(relx=0.02, rely=0.02, anchor='nw')
     instructions_of_the_game_label.pack()
@@ -38,10 +30,11 @@ def Help() -> None:
     title_instructions_of_the_game_label.pack()
     title_instructions_of_the_game_label.place(relx=0.5, rely=0.1, anchor='center')
 
-def Configuration() -> None:
-    ChangeFrame(config_frame)
-    button_configuration_return.pack()
-    button_configuration_return.place(relx=0.02, rely=0.02, anchor='nw')
+def ReturnToMainMenu() -> None:
+    Utils.ChangeFrame(Utils.main_frame)
+    button_help_return.pack_forget()
+    instructions_of_the_game_label.pack_forget()
+    title_instructions_of_the_game_label.pack_forget()
     
 def NextGen() -> None:
     global gen_number
@@ -66,9 +59,6 @@ def ButtonCreator(frame, button_list) :
         for j in range(20):
             aux_button = MatrixButton(i,j, frame)
             button_list.append(aux_button)
-    ConfigurateButtons(button_list)
-            
-def ConfigurateButtons(button_list):
     pos_x = 0.2
     pos_y = 0.025
     for i in range(20):
@@ -77,6 +67,7 @@ def ConfigurateButtons(button_list):
             pos_x += 0.033333333333333
         pos_x = 0.2
         pos_y += 0.05
+    
 
 def SubmitPosition(x, y) -> None:
     main_lattice.SwitchState(x, y)
@@ -92,8 +83,8 @@ def AutoPlay() -> None:
         button_auto_play.config(text = "Auto Play", fg = "green")
     while AutoPlayFlag:
         NextGen()
-        root.update()
-        root.after(500)
+        Utils.root.update()
+        Utils.root.after(100)
 
     
 
@@ -105,11 +96,10 @@ instructions_of_the_game_label = tkinter.Label(help_frame, bg = "lightblue", tex
 title_instructions_of_the_game_label = tkinter.Label(help_frame, bg = "lightblue", text = "GAME OF LIFE", font = ("courier", 14, "bold"))
 # /// BUTTONS
 button_clear_lattice = tkinter.Button(initial_frame, text = "Clear", fg = "orange", bg = "lightgrey", width = 7, command = ClearLattice)
-button_configuration = tkinter.Button(initial_frame, text = "Configuration", fg = "blue", bg = "lightgrey", command = Configuration)
+button_menu = tkinter.Button(initial_frame, text = "Back To Menu", fg = "blue", bg = "lightgrey", command = ReturnToMainMenu)
 button_help = tkinter.Button(initial_frame, text = "Help", fg = "red", bg = "lightgrey", command = Help)
 button_next_gen = tkinter.Button(initial_frame, text = "Next Gen", fg = "green", bg = "lightgrey", width = 7, command = NextGen)
-button_configuration_return = tkinter.Button(config_frame, text = "Return", fg = "blue", bg = "lightgrey", width = 7, command = lambda: ChangeFrame(initial_frame))
-button_help_return = tkinter.Button(help_frame, text = "Return", fg = "red", bg = "lightgrey", width = 7, command = lambda: ChangeFrame(initial_frame))
+button_help_return = tkinter.Button(help_frame, text = "Return", fg = "red", bg = "lightgrey", width = 7, command = lambda: Utils.ChangeFrame(initial_frame))
 button_auto_play = tkinter.Button(initial_frame, text = "Auto Play", fg = "green", bg = "lightgrey", width = 7,command = AutoPlay)
 
 ###                                                         /// CLASSES ///
