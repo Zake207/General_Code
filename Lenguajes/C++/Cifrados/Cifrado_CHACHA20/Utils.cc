@@ -154,32 +154,3 @@ void QRMatrix(vector<bitset<32>>& bin_array) {
         bin_array[i] = bitset<32>(sum);
     }
 }
-
-void EncryptMessage(const string& message, const vector<bitset<32>>& bin_array) {
-    string binary_message;
-    StringToBinary(message, binary_message);
-    cout << "Mensaje en binario: " << binary_message.size() << endl;
-    if(binary_message.size() > 512) {
-        cout << "/// ERROR: El mensaje es demasiado largo." << endl;
-        return;
-    } else {
-      // Convierto el mensaje a binario a un vector de bits
-      vector<bitset<32>> message_bits;
-      for (size_t i = 0; i < binary_message.size(); i += 32) {
-          bitset<32> bits(binary_message.substr(i, 32));
-          message_bits.push_back(bits);
-      }
-      // Relleno con ceros si es necesario
-      if (message_bits.size() < 16) {
-          message_bits.resize(16, bitset<32>(0));
-      }
-      // XOR con el mensaje
-      for (size_t i = 0; i < 16; ++i) {
-          message_bits[i] ^= bin_array[i];
-      }
-      // imprimo el mensaje cifrado
-      cout << "Mensaje cifrado: " << endl;
-      PrintBinArray(message_bits);
-      cout << endl;
-    }
-}

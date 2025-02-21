@@ -51,13 +51,6 @@ int main(int argc, char* argv[]) {
                 QRMatrix(bin_array);
                 cout << "\n\tDefinitive Matrix\n\n"; 
                 PrintBinArray(bin_array);
-                // Get the message to encrypt
-                string message;
-                cin.ignore();
-                cout << "Introduzca el mensaje a cifrar: ";
-                getline(cin, message);
-                // Encrypt the message
-                EncryptMessage(message, bin_array);
         } else {
                 cout << "/// ERROR: no se pudo abrir el archivo de ayuda." << endl;
                 return 2;
