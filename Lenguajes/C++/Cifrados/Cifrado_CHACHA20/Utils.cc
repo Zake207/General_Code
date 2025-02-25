@@ -141,8 +141,6 @@ void QRMatrix(vector<bitset<32>>& bin_array) {
         QR(bin_array[1], bin_array[6], bin_array[11], bin_array[12]);
         QR(bin_array[2], bin_array[7], bin_array[8], bin_array[13]);
         QR(bin_array[3], bin_array[4], bin_array[9], bin_array[14]);     
-
-        // Pasar a little endian
     }
 
     cout << "\n\tIterated Matrix\n\n";
