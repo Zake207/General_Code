@@ -33,8 +33,8 @@ int main() {
         bitset<8> number_a_binary;
         bitset<8> number_b_binary;
         bitset<8> module_binary{module == "AES" ? 0x1B : 0xA9};
-        FormatNumber(number_a, number_a_binary);
-        FormatNumber(number_b, number_b_binary);
+        // FormatNumber(number_a, number_a_binary);
+        // FormatNumber(number_b, number_b_binary);
         cout << "Primer byte: " << number_a_binary << endl;
         cout << "Segundo byte: " << number_b_binary << endl;
         cout << "Byte Algoritmo: " << module_binary << endl;

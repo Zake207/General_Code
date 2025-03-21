@@ -1,0 +1,45 @@
+{
+  "name": "prct04-arrays-tuples-enums-airam-prieto-gonzalez",
+  "version": "1.0.0",
+  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/4BXX0e9r) [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=18168507)",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run",
+    "doc": "typedoc",
+    "start-1": "tsc-watch --onSuccess \"node dist/ejercicio-1.js\"",
+    "start-2": "tsc-watch --onSuccess \"node dist/ejercicio-2.js\"",
+    "start-3": "tsc-watch --onSuccess \"node dist/ejercicio-3.js\"",
+    "start-4": "tsc-watch --onSuccess \"node dist/ejercicio-4.js\"",
+    "start-5": "tsc-watch --onSuccess \"node dist/ejercicio-5.js\"",
+    "start-6": "tsc-watch --onSuccess \"node dist/ejercicio-6.js\"",
+    "start-7": "tsc-watch --onSuccess \"node dist/ejercicio-7.js\"",
+    "start-8": "tsc-watch --onSuccess \"node dist/ejercicio-8.js\"",
+    "start-9": "tsc-watch --onSuccess \"node dist/ejercicio-9.js\"",
+    "start-10": "tsc-watch --onSuccess \"node dist/ejercicio-10.js\"",
+    "start-modi-1": "tsc-watch --onSuccess \"node dist/modi-1.js\"",
+    "start-modi-2": "tsc-watch --onSuccess \"node dist/modi-2.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ULL-ESIT-INF-DSI-2425/prct04-arrays-tuples-enums-Airam-Prieto-Gonzalez.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ULL-ESIT-INF-DSI-2425/prct04-arrays-tuples-enums-Airam-Prieto-Gonzalez/issues"
+  },
+  "homepage": "https://github.com/ULL-ESIT-INF-DSI-2425/prct04-arrays-tuples-enums-Airam-Prieto-Gonzalez#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "eslint": "^9.20.1",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-tsdoc": "^0.4.0",
+    "globals": "^15.14.0",
+    "prettier": "^3.5.0",
+    "tsc-watch": "^6.2.1",
+    "typedoc": "^0.27.7",
+    "typescript-eslint": "^8.24.0",
+    "vitest": "^3.0.5"
+  }
+}

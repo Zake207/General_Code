@@ -1,0 +1,217 @@
+<!-- Introduccion historia(airam), crear un proyecto en ts(javi, texto plano + listas), tipo de dato (barreto, tabla), forumluario( izan) -->
+
+<html>
+  <head>TypeScrypt Fundamentals</head>
+  <body bgcolor="#86f5ed" text="#000080"></body>
+    <h1>Introduccion a TS</h1>
+      
+  <!-- Airam -->
+  <h2><strong>Fundamentos históricos</strong></h2>
+<div style="background-color: lightgray; padding: 10px; width: 1000;">
+    <p style="font-family: 'Courier New', Courier, monospace; text-align: justify;">
+      TypeScript fue publicado en octubre de 2012, después de dos años de
+      desarrollo por parte de Microsoft. <br>Poco después de su publicación, Miguel
+      de Icaza elogió el lenguaje en sí mismo, pero criticó la falta de un IDE
+      maduro para todas las plataformas, en ese momento Microsoft Visual Studio
+      solo estaba disponible para Windows. <br>En la actualidad existen múltiples
+      editores, como Sublime Text, <dfn>Vim</dfn>(El famoso editor de texto plano), Emacs, Webstorm y el propio <abbr title="Visual Studio Code">VSC</abbr> de Microsoft.
+    </p>
+</div>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Typescript.svg/1200px-Typescript.svg.png", 
+width="200" height="200" ,alt="Logo del lenguaje" longdesc="Logotipo del lenguaje" name="Logo"/>
+    <h4><strong>Fuentes externas</strong></h4>
+    <p>
+      Si desea indagar más sobre este lenguaje aqui le dejamos una serie de
+      enlac
+    </p>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/TypeScript">Wikipedia</a></li>
+      <li><a href="https://www.typescriptlang.org/docs/">Documentación</a></li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=4W3UWjyyVkQ">Vídeo introductorio</a>
+      </li>
+    </ul>
+
+  <!-- Javi -->
+  <h2>Como crear un proyecto en TS </h2>
+  <h3>Gestion de dependencias y config del compilador en ts</h3>
+    <p>Lo primero que haremos sera abrir un aterminal y crearemos un
+    directorio de trabajo</p>
+    <ul>
+      <li>mkdir praticats</li>
+      <li>cd practicats</li>
+    </ul>
+    <p>Ahora ejecutaremos el siguiente comando que nos genera un documentos
+      package.json en la raíz de nuestro proyecto, el cual lo usaremos para las dependencias.
+      Luego además instalamos el compilador de TypeScript
+    </p>
+    <ul>
+      <li>npm init --yes</li>
+      <li>npm i --global typescript</li>
+    </ul>
+    <p>Ahora crearemos un fichero tsconfig.json y tendrá el siguiente contenido</p>
+    <ul>
+      <li>{</li>
+      <li>  "compilerOptions": {</li>
+      <li>    "target": "ES2024",</li>
+      <li>    "module": "commonjs",</li>
+      <li>    "rootDir": "./src",</li>
+      <li>    "outDir": "./dist"</li>
+      <li>  }</li>
+      <li>}</li>
+    </ul>
+  <h2>Compilación y ejecución automática</h2>
+    <p>Para compilar y ejecutar haremos esta serie de pasos
+      en los que crearemos un fichero y lo ejecutaremos
+    </p>
+    <ol>
+      <li>mkdir src</li>
+      <li>cd src/</li>
+      <li>code hello.ts (escribiemos console.log("hello world"))</li>
+      <li>cd ..</li>
+      <li>tsc</li>
+      <li>node dist/hello.js</li>
+    </ol>
+    <p>De esta form con el tsc compilamos y luego lo que se nos crear
+      en el dir dist/, lo ejecutamos con node
+    </p>
+    <p>Por otro lado si quieres ir compilando segun vas cambiando el codigo instalaremos esto</p>
+    <ul><li>npm install --save-dev tsc-watch</li></ul>
+    <p>Y para ejecutar el comando de lo que acabamos de instalar haremos npm start</p>
+  
+
+  <!-- Barreto -->
+  <h2>Tipos de datos en TypeScript</h2>
+  <table border="1">
+    <tr>
+      <th scope="col">Tipo</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Ejemplo</th>
+    </tr>
+    <tr>
+      <td>Number</td> 
+      <td>Representa números, tanto enteros como decimales</td> 
+      <td><code>let num: number = 5</code></td>
+    </tr>
+    <tr>
+      <td>String</td> 
+      <td>Representa cadenas de texto</td> 
+      <td><code>let cadena: string = "Hola"</code></td>
+    </tr>
+    <tr>
+      <td>Boolean</td> 
+      <td>Representa valores booleanos (true o false)</td> 
+      <td><code>let verdadero: boolean = true</code></td>
+    </tr>
+    <tr>
+      <td>Array</td> 
+      <td>Representa una lista de elementos, que pueden o no ser del mismo tipo</td> 
+      <td><code>let lista: number[] = [1,2,3]</code></td>
+    </tr>
+    <tr>
+      <td>Any</td> 
+      <td>Representa cualquier tipo de dato</td> 
+      <td><code>let variable: any = "Hola"</code></td>
+    </tr>
+    <tr>
+      <td>Undefined</td> 
+      <td>Representa un valor indefinido</td> 
+      <td><code>let vacio: undefined = undefined</code></td>
+    </tr>
+    <tr>
+      <td>Unión de tipos</td>
+      <td>Permite definir una variable con varios tipos posibles</td>
+      <td><code>let numero: number | undefined = 5</code></td>
+    </tr>
+  </table>
+  
+   
+
+
+
+  <!-- Izan -->
+  <h2>Formulario de Preguntas sobre TypeScript</h2>
+  <p>Aqui hay un <em>breve formulario</em> con las preguntas mas relevantes de <strong>TypeScript</strong>, el cual tiene la finalidad de
+    afianzar los conocimientos adquiridos en la materia.
+  </p>
+  <a href="https://www.typescriptlang.org/">Enlace a pagina oficial de Typescript</a><br><br>
+  <form action="#" method="post", enctype="multipart/form-data", accept="image/*">
+      <fieldset>
+          <legend><h5>Información Personal</h5></legend>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required><br><br>
+          <input type="password" name="passw" required id="passw"><br><br>
+          <label >¿Recolectar datos?</label>
+          <input type="checkbox" name="datacollect" id="datacollect"><br><br>
+          <label for="fileupload">Ficheros adicionales de subida</label>
+          <input type="file" name="fileupload" id="fileupload"><br><br>
+          <label for="imgupload">Boton con forma de imagen</label>
+          <input type="image" src="https://cdn.pixabay.com/photo/2015/07/25/08/05/the-button-859351_1280.png" alt="boton con forma de imagen" width="100" height="40">
+      </fieldset>
+
+      <fieldset>
+          <legend><h5>Preguntas sobre <acronym title="Typescript">TS</acronym></h5></legend>
+          <label for="ts_uso">¿Para qué se usa TypeScript?</label><br>
+          <textarea id="ts_uso" name="ts_uso" rows="4" cols="50", required></textarea><br><br>
+          
+          <details>
+              <summary><h6>Mostrar respuesta</h6></summary>
+              Se usa para agregar tipado estático a JavaScript y mejorar la mantenibilidad del código.
+          </details><br>
+
+          <label>¿TypeScript es un superset de qué lenguaje?</label>
+          <input type="radio" id="js" name="superset" value="JavaScript", required>
+          <label for="js">JavaScript</label>
+          <input type="radio" id="python" name="superset" value="Python", required>
+          <label for="python">Python</label><br><br>
+          
+          <details>
+              <summary><h6>Mostrar respuesta</h6></summary>
+              TypeScript es un superset de JavaScript.
+          </details><br>
+
+          <label for="tipado">¿Cómo se define una variable con tipado explícito en TypeScript?</label><br>
+          <textarea id="tipado" name="tipado" rows="2" cols="50", required></textarea><br><br>
+          
+          <details>
+              <summary><h6>Mostrar respuesta</h6></summary>
+              Se define con <code>let variable: tipo = valor;</code>, por ejemplo: <code>let edad: number = 25;</code>
+          </details><br>
+
+          <label for="opcion">¿Cuál de estas características es exclusiva de TypeScript?</label>
+          <select id="opcion" name="opcion", required>
+              <option value="">Seleccione una opción</option>
+              <option value="opcion1">Inferencia de tipos</option>
+              <option value="opcion2">Funciones flecha</option>
+              <option value="opcion3">DOM Manipulation</option>
+          </select><br><br>
+          
+          <details>
+              <summary><h6>Mostrar respuesta</h6></summary>
+              La inferencia de tipos es exclusiva de TypeScript.
+          </details><br>
+
+          <label for="interfaces">¿Para qué se usan las interfaces en TypeScript?</label><br>
+          <textarea id="interfaces" name="interfaces" rows="4" cols="50"></textarea><br><br>
+          
+          <details>
+              <summary><h6>Mostrar respuesta</h6></summary>
+              Las interfaces se usan para definir la estructura de un objeto, asegurando que tenga ciertas propiedades con tipos específicos.
+          </details><br>
+          
+          <label for="modulos">¿Cómo se importan módulos en TypeScript?</label><br>
+          <textarea id="modulos" name="modulos" rows="2" cols="50"></textarea><br><br>
+          
+          <details>
+              <summary><h6>Mostrar respuesta</h6></summary>
+              Se usa la sintaxis <code>import { modulo } from 'ruta';</code>, por ejemplo: <code>import { sumar } from './utilidades';</code>
+          </details><br>
+      </fieldset>
+
+      <input type="hidden" name="oculto" value="dato_secreto">
+      <input type="submit" value="Enviar">
+      <input type="reset" value="Restablecer">
+  </form>
+
+  </body>
+</html>
