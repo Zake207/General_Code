@@ -12,7 +12,7 @@ prev_cipher = iv
 # Calculamos el resultado
 result = []
 for block in message_vector:
-    print(prev_cipher + " XOR " + block)
+    # print(prev_cipher + " XOR " + block)
     pivot = bytes(a ^ b for a, b in zip(bytes.fromhex(prev_cipher), bytes.fromhex(block)))
     pivot_hex = pivot.hex()
     encrypted_block = AES.AES(key, pivot_hex)
