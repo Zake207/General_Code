@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progreso de Aprendizaje</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .progress-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 40px;
+        }
+        .language-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 250px;
+        }
+        .language-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+        .progress-bar {
+            height: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        .progress {
+            height: 100%;
+            background: #28a745;
+        }
+        .btn-learn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="text-center py-4 text-white bg-success">
+        <h1>Selecciona tu Lenguaje de Programación</h1>
+    </header>
+    <main>
+        <section class="progress-container">
+            <div class="language-card">
+                <img src="python-logo.png" alt="Python">
+                <h2>Python</h2>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+                <p>70% completado</p>
+                <a href="python.html" class="btn btn-success btn-learn">Acceder</a>
+            </div>
+            <div class="language-card">
+                <img src="ts-logo.png" alt="TypeScript">
+                <h2>TypeScript</h2>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 50%;"></div>
+                </div>
+                <p>50% completado</p>
+                <a href="typescript.html" class="btn btn-success btn-learn">Acceder</a>
+            </div>
+            <div class="language-card">
+                <img src="cplus-logo.png" alt="C++">
+                <h2>C++</h2>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 30%;"></div>
+                </div>
+                <p>30% completado</p>
+                <a href="cpp.html" class="btn btn-success btn-learn">Acceder</a>
+            </div>
+            <div class="language-card">
+                <img src="cs-logo.png" alt="C#">
+                <h2>C#</h2>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 23%;"></div>
+                </div>
+                <p>23% completado</p>
+                <a href="csharp.html" class="btn btn-success btn-learn">Acceder</a>
+            </div>
+            <div class="language-card">
+                <img src="rust-logo.png" alt="Rust">
+                <h2>Rust</h2>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 46%;"></div>
+                </div>
+                <p>46% completado</p>
+                <a href="rust.html" class="btn btn-success btn-learn">Acceder</a>
+            </div>
+            <div class="language-card">
+                <img src="go-logo.png" alt="Go">
+                <h2>Go</h2>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 10%;"></div>
+                </div>
+                <p>10% completado</p>
+                <a href="go.html" class="btn btn-success btn-learn">Acceder</a>
+            </div>
+            <div class="language-card">
+                <img src="js-logo.png" alt="JavaScript">
+                <h2>JavaScript</h2>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 65%;"></div>
+                </div>
+                <p>65% completado</p>
+                <a href="javascript.html" class="btn btn-success btn-learn">Acceder</a>
+            </div>
+            <div class="language-card">
+                <img src="ruby-logo.png" alt="Ruby">
+                <h2>Ruby</h2>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+                <p>85% completado</p>
+                <a href="ruby.html" class="btn btn-success btn-learn">Acceder</a>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
